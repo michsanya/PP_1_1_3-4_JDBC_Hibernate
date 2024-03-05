@@ -18,10 +18,10 @@ public class Util {
     public static SessionFactory getSessionFactory () {
         StandardServiceRegistryBuilder standardServiceRegistryBuilder = new StandardServiceRegistryBuilder();
         Map<String,String> settings = new HashMap<>();
-        settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/user");
-        settings.put(Environment.DRIVER, "org.postgresql.Driver");
-        settings.put(Environment.USER, "user");
-        settings.put(Environment.PASS, "user");
+        settings.put(Environment.URL, "jdbc:mysql://localhost:3306/user_db");
+        settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+        settings.put(Environment.USER, "root");
+        settings.put(Environment.PASS, "1234");
         standardServiceRegistryBuilder.applySettings(settings);
         StandardServiceRegistry standardServiceRegistry = standardServiceRegistryBuilder.build();
         MetadataSources metadataSources = new MetadataSources(standardServiceRegistry).addAnnotatedClass(User.class);
