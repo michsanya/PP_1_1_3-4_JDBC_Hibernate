@@ -28,6 +28,11 @@ public class User {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return this.getName() + " "+ this.getLastName();
+    }
+
     public Long getId() {
         return id;
     }
